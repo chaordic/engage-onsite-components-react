@@ -1,0 +1,33 @@
+$font-family: Ubuntu;
+
+$color-default: #000;
+$color-primary: #2574a9;
+$color-secondary: #ccc;
+
+.onsite-product {
+  font-family: $font-family;
+
+  a {
+    color: $color-default;
+  }
+
+  .img-wrapper img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .product-detail {
+    margin-top: 10px;
+
+    .price-list {
+      margin-top: 10px;
+      color: $color-primary;
+
+      .price-old {
+        color: $color-secondary;
+        text-decoration: line-through;
+      }
+    }
+  }
+}
