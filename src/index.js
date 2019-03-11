@@ -1,5 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Widget from './components/widget';
-
-ReactDOM.render(<Widget />, document.getElementById('app'));
+export {
+  default as Product,
+} from './components/Product';

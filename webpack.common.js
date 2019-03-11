@@ -1,15 +1,15 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: ['./src/index.js'],
+  entry: ['@babel/polyfill', './src/index.js'],
 
   output: {
     path: path.resolve('dist'),
     filename: '[name].js',
   },
-
-  mode: 'development',
 
   module: {
     rules: [
@@ -23,5 +23,15 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(['dist']),
+
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
+
+    new StyleLintPlugin({
+      configFile: '.stylelintrc',
+      context: 'src',
+      syntax: 'scss',
+    }),
   ],
 };
